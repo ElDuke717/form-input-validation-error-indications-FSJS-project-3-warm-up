@@ -63,7 +63,7 @@ const nameValidator = () => {
   // 3a. Create an if/else statement.
     // If `nameIsValid` equals true, call the `validationPass` function and pass it the `nameElement` variable from above as an argument
     // Else call the `validationFail` function and pass it the `nameElement` variable from above as an argument
-    nameIsValid === true ? validationPass(nameElement) : validationFail(nameElement);
+  nameIsValid === true ? validationPass(nameElement) : validationFail(nameElement);
   
   return nameIsValid;
 }
@@ -97,6 +97,7 @@ const languageValidator = () => {
   // 3c. Create an if/else statement.
     // If `languageSectionIsValid` equals true, call the `validationPass` function and pass it the `languagesBox` variable from above as an argument
     // Else call the `validationFail` function and pass it the `languagesBox` variable from above as an argument
+    languageSectionIsValid === true ? validationPass(languagesBox) : validationFail(languagesBox);
 
 
   // Tests that the `languageTotal` variable provided you above equals an integer greater than zero.
