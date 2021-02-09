@@ -33,7 +33,7 @@ document.querySelector('#languages').addEventListener('change', e => {
 
 function validationPass(element) {
   console.log('validationPass');
-  element.parentElement.className = 'valid';
+  element.parentElement.classList.add('valid');
   element.parentElement.classList.remove('not-valid');
   element.parentElement.lastElementChild.style.display = 'hidden';
 }
@@ -45,7 +45,7 @@ function validationPass(element) {
     // 2c. Display the `lastElementChild` of the `element` parameter's `parentElement`
 function validationFail(element) {
   console.log('validationFail');
-  element.parentElement.className = 'not-valid';
+  element.parentElement.classList.add('not-valid');
   element.parentElement.classList.remove('valid');
   element.parentElement.lastElementChild.style.display  = 'display';
 }
@@ -115,6 +115,17 @@ const languageValidator = () => {
 // Don't use parens when passing a reference to a function as a callback
 // Something like: `nameElement.addEventListener('keyup', nameValidator);`
 
+nameElement.addEventListener('keyup', e => {
+  nameValidator();
+});
+
+email.addEventListener('keyup', e => {
+  emailValidator();
+});
+
+languagesBox.addEventListener('keyup', e => {
+  languageValidator();
+});
 
 
 /* Submit listener on the form element */
@@ -143,6 +154,7 @@ form.addEventListener('submit', e => {
   }
 
   if (!emailValidator()) {
+    alert('Invalid email prevented submission');
     console.log('Invalid email prevented submission');
     e.preventDefault();
   }
