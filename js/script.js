@@ -32,10 +32,10 @@ document.querySelector('#languages').addEventListener('change', e => {
     // 1c. Hide the `lastElementChild` of the `element` parameter's `parentElement`
 
 function validationPass(element) {
-  element.parentElement.className = 'valid';
-  element.parentElement.className.remove('not-valid');
-  element.lastElementChild = 'hidden';
   console.log('validationPass');
+  element.parentElement.className = 'valid';
+  element.parentElement.classList.remove('not-valid');
+  element.parentElement.lastElementChild.style.display = 'hidden';
 }
 
 // 2. Create a function named `validationFail` and give it one parameter: `element`
@@ -44,10 +44,10 @@ function validationPass(element) {
     // 2b. Remove from the `element` parameter's `parentElement` the className 'valid`
     // 2c. Display the `lastElementChild` of the `element` parameter's `parentElement`
 function validationFail(element) {
-  element.parentElement.className = 'not-valid';
-  element.parentElement.className.remove('valid');
-  element.lastElementChild = 'display';
   console.log('validationFail');
+  element.parentElement.className = 'not-valid';
+  element.parentElement.classList.remove('valid');
+  element.parentElement.lastElementChild.style.display  = 'display';
 }
   
 //3. Complete the steps in the three fu nctions below
